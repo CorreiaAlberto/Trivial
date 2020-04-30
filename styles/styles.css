@@ -1,11 +1,42 @@
-h1 {
-  align-items: center;
+#titulo {
+  text-align: center;
+  border: 1px solid black;
 }
-
-body {
-  background-color: blue;
-}
-
 .hero {
-  background-color: blue;
+  height: 450px;
+}
+#preguntas {
+  text-align: center;
+  margin-bottom: 80px;
+}
+#cuadro-jugadores {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.player1 {
+  width: 600px;
+  border: 1px solid black;
+}
+.player2 {
+  width: 600px;
+  border: 1px solid black;
+}
+
+.opciones {
+  width: 580px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+.op {
+  border: 2px solid black;
+  width: 140px;
+  height: 50px;
+  text-align: center;
+}
+.player-score {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }

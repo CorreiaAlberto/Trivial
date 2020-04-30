@@ -14,13 +14,13 @@ su puntuacion con otros usuarios para saber quien es el que mas sabe de cocktail
 
 ## MVP:
 
-- El usuario podrá introducir su nombre
 - El usuario respondera preguntas
 - El usuario obtendrá puntos por preguntas acertadas, que almacenará en su "score"
 - El juego acabará en "x" preguntas.
 
 ## Back-log:
 
+- El usuario podrá introducir su nombre
 - Multijugador
 - El usuario podrá comparar su score al adversario y 1 resultará vencedor
 - El usuario tendrá un tiempo limitado para responder a las preguntas
@@ -31,11 +31,10 @@ Estructura de datos:
 -DOM
 
 - Constructor Clase player (Nombre)
-- Metodo Pregunta () ===> selecciona una pregunta aleatoria almacenada en una variable.
+- Metodo seleccionPregunta () ===> selecciona una pregunta aleatoria almacenada en una variable.
 - Metodo primeraVez () ===> Evalua si es la primera vez que la pregunta es escogida, en caso negativo selecciona otra.
 - Metodo shuffleAnswers () ===> Hace un display ramdon de las opciones de respuesta
-- Metodo respestaCorrecta () ===> valora si la respuesta es correcta y los puntos segun grado de aceptabilidad de la respuesta.
-- Metodo score() ===> evalua preguntaCorrecta(), y suma tu puntuacion al marcador.
+- Metodo respestaCorrecta () ===> valora si la respuesta es correcta y añade puntuacion al score.
 - Metodo gameOver() ===> pasadas "x" rondas, devuelve el score y para el juego.
 - Metodo ganador //para multijugador () ===> Compara el metodo score() de ambos jugadores y retorna el ganador.
 
