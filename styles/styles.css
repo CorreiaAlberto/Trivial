@@ -3,7 +3,14 @@
   border: 1px solid black;
 }
 .hero {
-  height: 400px;
+  height: 600px;
+  width: auto;
+  align-items: center;
+}
+#imagen {
+  display: block;
+  margin: auto;
+  height: 600px;
 }
 #preguntas {
   text-align: center;
@@ -47,5 +54,5 @@
   text-align: center;
 }
 #coverImg {
-  width: 450px;
+  width: 500px;
 }
