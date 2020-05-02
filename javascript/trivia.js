@@ -1,6 +1,5 @@
 //Preguntas
-const preguntas = [
-  {
+const preguntas = [{
     pregunta: "¿Que cocktail popularizó la pelicula El gran Lebowsky?",
     a: "Cosmopolitan",
     b: "Old fashioned",
@@ -17,8 +16,7 @@ const preguntas = [
     img: "./imgs/bloody mary.jpg",
   },
   {
-    pregunta:
-      "¿Que cocktail hizo aparición durante la segunda parte de El padrino?",
+    pregunta: "¿Que cocktail hizo aparición durante la segunda parte de El padrino?",
     a: "Dry martini",
     b: "Tom Collins",
     c: "Negroni",
@@ -51,16 +49,16 @@ class Player {
 class Partida {
   constructor() {
     this.preguntas = preguntasMezcladas;
-    this.preguntaActual = preguntas[0].pregunta;
-    this.Indice = 0;
+    this.indice = 0;
+    this.preguntaActual = this.preguntas[this.indice];
     this.preguntasRealizadas = [];
   }
   //Comprobar respuesta ganadora
-  respuestaCorrecta(respuestaUsuario) {
-    if (respuestaUsuario == preguntas[this.indice].correcta) {
-      return true;
-    }
-  }
+  // respuestaCorrecta(respuestaUsuario) {
+  //  if (respuestaUsuario == preguntas[this.indice].correcta) {
+  //  return true;
+  // }
+  //}
   //Actualizar Score
   actualizarScore() {
     if (this.respuestaCorrecta) {
@@ -70,14 +68,33 @@ class Partida {
 
   //Metodo para siguiente pregunta
   siguientePregunta() {
-    indice++;
-    this.preguntaActual = this.preguntas[this.indice];
+
+    //Mostrar 1 pregunta
+    document.getElementById("pregunta").innerHTML = this.preguntas[this.indice].pregunta;
+    //Mostrar 1 imagen
+    document.getElementById("imagen").src = this.preguntas[this.indice].img;
+    //shuffle respuestas
+    let opciones = ["a", "b", "c", "correcta"]
+
+
+    opciones = shuffle(opciones)
+
+    //Mostrar opciones respuesta
+    document.getElementById("a").innerHTML = this.preguntas[this.indice].a;
+    document.getElementById("b").innerHTML = this.preguntas[this.indice].b;
+    document.getElementById("c").innerHTML = this.preguntas[this.indice].c;
+    document.getElementById("correcta").innerHTML = this.preguntas[this.indice].correcta;
+    const botones = document.getElementsByClassName("op")
+    Array.from(botones).forEach(function (boton) {
+      boton.style.backgroundColor = "#DDD"
+    })
+    this.indice++;
   }
 }
 class Board {
   constructor() {
     this.splash = document.getElementById("splash");
-    this.preguntaActual = document.getElementById("pregunta");
+
     this.heroImg = document.getElementById("hero");
     this.player1Score = document.getElementById("score1");
     this.player2Score = document.getElementById("score2");
@@ -89,6 +106,7 @@ class Board {
 }
 let board = new Board();
 let player1 = new Player("alberto");
+let partida = new Partida()
 
 //Cambio Splash
 document.getElementById("inicio").onclick = (evento) => {
@@ -99,18 +117,30 @@ document.getElementById("inicio").onclick = (evento) => {
   //Mostrar player 1
   document.getElementById("player1").style.display = "inline";
   // document.getElementById("player").innerHTML =
-  //Mostrar 1 pregunta
-  document.getElementById("pregunta").innerHTML = preguntas[0].pregunta;
-  //Mostrar 1 imagen
-  document.getElementById("imagen").src = preguntas[0].img;
-  //Mostrar opciones respuesta
-  document.getElementById("a").innerHTML = preguntas[0].a;
-  document.getElementById("b").innerHTML = preguntas[0].b;
-  document.getElementById("c").innerHTML = preguntas[0].c;
-  document.getElementById("d").innerHTML = preguntas[0].correcta;
+  // boton siguiente pregunta
+  document.getElementById("siguiente").onclick = (evento) => {
+    partida.siguientePregunta()
+  }
+
   //inicio partida
-  new Partida();
+  partida.siguientePregunta()
 };
+// Colorear respuestas
+const respuestaValida = document.getElementById("d")
+const respuestaInvalida = document.querySelectorAll("#a,#b,#c")
+
+
+respuestaValida.addEventListener("click", event => {
+  respuestaValida.style.backgroundColor = "green"
+})
+
+Array.from(respuestaInvalida).forEach(function (elemento) {
+  elemento.addEventListener("click", event => {
+    event.target.style.backgroundColor = "red"
+  })
+})
+
+
 
 /* clase partida ()
 constructor ()
