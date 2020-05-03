@@ -130,7 +130,7 @@ let preguntasMezcladas = shuffle(preguntas);
 class Player {
   constructor(nombre) {
     this.nombre = nombre;
-    this.score = 0;
+
   }
 }
 
@@ -141,6 +141,7 @@ class Partida {
     this.indice = 0;
     this.preguntaActual = this.preguntas[this.indice];
     this.preguntasRealizadas = [];
+    this.score = 0;
   }
   //Comprobar respuesta ganadora
   respuestaCorrecta(respuestaUsuario) {
@@ -154,7 +155,26 @@ class Partida {
       score = score + 5;
     }
   }
+  //Comprobar si ha acabado la partida
+  gameOver() {
+    if (this.indice >= 10) {
+      //mostrar splash game over
+      document.getElementById("titulo").style.display = "none"
+      document.getElementById("hero").style.display = "none"
+      document.getElementById("cuadro-jugadores").style.display = "none"
+      document.getElementById("preguntas").style.display = "none"
+      document.getElementById("siguiente").style.display = "none"
+      document.getElementById("gameOver").style.display = "inline"
 
+      //Poner cancion game over
+      let song = document.getElementById("song")
+
+      function playSong() {
+        song.play()
+      }
+      playSong()
+    }
+  }
 
   //Metodo para siguiente pregunta
   siguientePregunta() {
@@ -173,23 +193,19 @@ class Partida {
     document.getElementById("b").innerHTML = this.preguntas[this.indice].b
     document.getElementById("c").innerHTML = this.preguntas[this.indice].c
     document.getElementById("correcta").innerHTML = this.preguntas[this.indice].correcta
+    //Reseteo color opciones respuesta
     const botones = document.getElementsByClassName("op")
     Array.from(botones).forEach(function (boton) {
       boton.style.backgroundColor = "#DDD"
     })
+    //Icremento indice
     this.indice++;
+    //Actualizar score
+    //this.actualizarScore()
+    // Check game over
+    this.gameOver()
   }
-  //Comprobar si ha acabado la partida
-  gameOver() {
-    if (this.indice >= 10) {
-      //mostrar splash game over
-      document.getElementById("titulo").style.display = "none"
-      document.getElementById("hero").style.display = "none"
-      document.getElementById("cuadro-jugadores").style.display = "none"
-      document.getElementById("gameOver").style.display = "inline"
-      //Poner cancion game over
-    }
-  }
+
 }
 class Board {
   constructor() {
@@ -240,18 +256,3 @@ Array.from(respuestaInvalida).forEach(function (elemento) {
     event.target.style.backgroundColor = "red"
   })
 })
-
-
-
-/* clase partida ()
-constructor ()
-preguntas
-preguntaSeleccionada = 1
-indice = 0
-function siguientePregunta() {
-indice ++
-this.preguntaSeleccionada= this.preguntas[this.indice]
-}
-const partidaNueva = new partida () 
-partidaNueva.siguientePregunta() 
-partidaNueva.partidaSeleccionada*/

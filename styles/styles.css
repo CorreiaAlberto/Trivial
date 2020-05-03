@@ -70,11 +70,17 @@ body {
 #coverImg {
   width: 500px;
 }
-.gameOver {
+#gameOver {
   height: 600 px;
+  width: max-content;
+  display: none;
+  color: white;
+  font-size: 20px;
+  text-align: center;
 }
 #coverImgOver {
-  width: max-content;
-  text-align: center;
-  display: none;
+  height: 600px;
+  width: auto;
+  display: block;
+  margin: auto;
 }
