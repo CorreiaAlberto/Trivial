@@ -20,8 +20,16 @@
   <body>
     <h1 id="titulo">Cocktail Trivia</h1>
     <div class="splash" id="splash">
-      <img src="./imgs/tomcruise.jpg" alt="" id="coverImg" /> <br />
-      ¿Preparado para demostrar cuanto sabes de cocktails? <br />
+      <div><img src="./imgs/tomcruise.jpg" alt="" id="coverImg" /> <br /></div>
+      <p>¿Preparado para demostrar cuanto sabes de cocktails? <br /></p>
+      <div>
+        Como te llamas??:
+        <input id="nombreUsuario" type="text" name="fname" /><input
+          type="button"
+          onclick="myFunction()"
+          value="Enviar"
+        /><br />
+      </div>
       <button id="inicio">iniciar juego!!</button>
     </div>
     <div class="hero" id="hero">
@@ -58,6 +66,11 @@
         </div>
       </div>
     </div>
+
+    <div class="gameOver" id="gameOver">
+      <img id="coverImgOver" src="./imgs/gameOver.jpg" alt="" />
+    </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script

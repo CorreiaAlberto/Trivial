@@ -1,6 +1,12 @@
+body {
+  background-image: url("https://i.pinimg.com/originals/9b/c9/8f/9bc98f55db5737c6b9601ea215f14467.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 #titulo {
   text-align: center;
-  border: 1px solid black;
+  border: 3px solid red;
+  color: white;
 }
 .hero {
   height: 600px;
@@ -16,6 +22,8 @@
   text-align: center;
   margin-bottom: 80px;
   display: none;
+  color: white;
+  font-size: larger;
 }
 #cuadro-jugadores {
   display: flex;
@@ -24,8 +32,9 @@
 }
 .player1 {
   width: 600px;
-  border: 1px solid black;
+  border: 1px solid red;
   display: none;
+  color: white;
 }
 .player2 {
   width: 600px;
@@ -52,7 +61,20 @@
 }
 .splash {
   text-align: center;
+  font-size: larger;
+  color: white;
+}
+#inicio {
+  margin: 30px;
 }
 #coverImg {
   width: 500px;
+}
+.gameOver {
+  height: 600 px;
+}
+#coverImgOver {
+  width: max-content;
+  text-align: center;
+  display: none;
 }

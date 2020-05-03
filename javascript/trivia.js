@@ -23,6 +23,95 @@ const preguntas = [{
     correcta: "Banana daiquiri",
     img: "./imgs/el padrino.jpg",
   },
+  {
+    pregunta: "¿Cual es el nombre del cocktail favorito de James Bond?",
+    a: "Vodka Martini",
+    b: "Coco loco",
+    c: "Bondtini",
+    correcta: "Vesper Martini",
+    img: "./imgs/james bond.jpg"
+  },
+  {
+    pregunta: "¿Cual es el nombre del cocktail que vemos preparar en la imagen a Jerry Thomas? ",
+    a: "Blue lagoon",
+    b: "Manhattan",
+    c: "Mint julep",
+    correcta: "Blue blazer",
+    img: "./imgs/Jerry-Thomas.jpg"
+  },
+  {
+    pregunta: "¿Que establecimiento cubano comercilizó por primerar vez el popular mojito?",
+    a: "La floridita",
+    b: "El bribón de la havana",
+    c: "La cantina del Malecón",
+    correcta: "La bodedguita de en medio",
+    img: "./imgs/mojito.jpg"
+
+  },
+  {
+    pregunta: "¿Cual es la bebida favorita de Don Draper, protagonista de Mad men?",
+    a: "Negroni",
+    b: "Long island ice tea",
+    c: "Agua con gas",
+    correcta: "Old fashioned",
+    img: "./imgs/madmen.jpg"
+  },
+  {
+    pregunta: "¿Cual es la base alcoholica predominante en la coctelería Tiki?",
+    a: "Vodka",
+    b: "Whisky",
+    c: "Ginebra",
+    correcta: "Ron",
+    img: "./imgs/tiki.jpg"
+  },
+  {
+    pregunta: "¿Cual de estos ingredientes lleva el Long Island ice tea?",
+    a: "Ginebra",
+    b: "Vodka",
+    c: "Tequila",
+    correcta: "Todas las opciones son correctas",
+    img: "./imgs/long-island.jpg"
+  },
+  {
+    pregunta: "¿Cual era la bebida favorita de las  chicas de Sexo en Nueva York?",
+    a: "Bramble",
+    b: "Gin-tonic",
+    c: "Margarita",
+    correcta: "Cosmopolitan",
+    img: "./imgs/sexoNY.jpg"
+  },
+  {
+    pregunta: "¿Que coctelería inglesa se mantuvo durante 3 años consecutivos en el numero 1 de 50 world best bars?",
+    a: "Nigthjar",
+    b: "Happines Forgets",
+    c: "Dandelyan",
+    correcta: "The Artesian",
+    img: "./imgs/Artesian1.jpg"
+  },
+  {
+    pregunta: "¿Que tres ingredientes lleva un Margarita?",
+    a: "Pisco, triple seco y zumo de lima",
+    b: "Tequila, ázucar y zumo de lima",
+    c: "Tequila, triple seco y ázucar",
+    correcta: "Tequila, triple seco y zumo de lima",
+    img: "./imgs/margarita.jpg"
+  },
+  {
+    pregunta: "¿Que se conoce como Speakeasy?",
+    a: "Un licor",
+    b: "Un tipo de cerveza",
+    c: "Una bebida tradicional checa",
+    correcta: "Un bar oculto",
+    img: "./imgs/speak.jpg"
+  },
+  {
+    pregunta: "¿Que día acabó la ley seca en EEUU?",
+    a: "4 de Junio 1935",
+    b: "22 de Enero 1928",
+    c: "7 de Noviembre 1932",
+    correcta: "5 de Diciembre de 1933",
+    img: "./imgs/leyseca.jpg"
+  }
 ];
 // Aplico un shuffle para poder pasar orden de preguntas distinto cada vez
 function shuffle(arr) {
@@ -54,17 +143,18 @@ class Partida {
     this.preguntasRealizadas = [];
   }
   //Comprobar respuesta ganadora
-  // respuestaCorrecta(respuestaUsuario) {
-  //  if (respuestaUsuario == preguntas[this.indice].correcta) {
-  //  return true;
-  // }
-  //}
+  respuestaCorrecta(respuestaUsuario) {
+    if (respuestaUsuario == preguntas[this.indice].correcta) {
+      return true;
+    }
+  }
   //Actualizar Score
   actualizarScore() {
     if (this.respuestaCorrecta) {
       score = score + 5;
     }
   }
+
 
   //Metodo para siguiente pregunta
   siguientePregunta() {
@@ -74,21 +164,31 @@ class Partida {
     //Mostrar 1 imagen
     document.getElementById("imagen").src = this.preguntas[this.indice].img;
     //shuffle respuestas
-    let opciones = ["a", "b", "c", "correcta"]
-
-
-    opciones = shuffle(opciones)
+    //let opciones = ["a", "b", "c", "correcta"]
+    //opciones = shuffle(opciones)
 
     //Mostrar opciones respuesta
-    document.getElementById("a").innerHTML = this.preguntas[this.indice].a;
-    document.getElementById("b").innerHTML = this.preguntas[this.indice].b;
-    document.getElementById("c").innerHTML = this.preguntas[this.indice].c;
-    document.getElementById("correcta").innerHTML = this.preguntas[this.indice].correcta;
+
+    document.getElementById("a").innerHTML = this.preguntas[this.indice].a
+    document.getElementById("b").innerHTML = this.preguntas[this.indice].b
+    document.getElementById("c").innerHTML = this.preguntas[this.indice].c
+    document.getElementById("correcta").innerHTML = this.preguntas[this.indice].correcta
     const botones = document.getElementsByClassName("op")
     Array.from(botones).forEach(function (boton) {
       boton.style.backgroundColor = "#DDD"
     })
     this.indice++;
+  }
+  //Comprobar si ha acabado la partida
+  gameOver() {
+    if (this.indice >= 10) {
+      //mostrar splash game over
+      document.getElementById("titulo").style.display = "none"
+      document.getElementById("hero").style.display = "none"
+      document.getElementById("cuadro-jugadores").style.display = "none"
+      document.getElementById("gameOver").style.display = "inline"
+      //Poner cancion game over
+    }
   }
 }
 class Board {
@@ -126,12 +226,13 @@ document.getElementById("inicio").onclick = (evento) => {
   partida.siguientePregunta()
 };
 // Colorear respuestas
-const respuestaValida = document.getElementById("d")
+const respuestaValida = document.getElementById("correcta")
 const respuestaInvalida = document.querySelectorAll("#a,#b,#c")
 
 
 respuestaValida.addEventListener("click", event => {
   respuestaValida.style.backgroundColor = "green"
+
 })
 
 Array.from(respuestaInvalida).forEach(function (elemento) {
