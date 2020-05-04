@@ -3,84 +3,122 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 #titulo {
   text-align: center;
-  border: 3px solid red;
+  width: 100vw;
+  border: 5px solid red;
   color: white;
+  font-family: "Righteous", cursive;
+  font-size: 3em;
+  margin-bottom: 5vh;
 }
 .hero {
-  height: 600px;
-  width: auto;
+  height: auto;
+  width: 100vw;
   align-items: center;
 }
 #imagen {
   display: block;
   margin: auto;
-  height: 600px;
+  align-self: center;
+  width: 60vw;
+  height: auto;
+  margin-bottom: 5vh;
 }
 #preguntas {
   text-align: center;
-  margin-bottom: 80px;
+  margin-bottom: 10vh;
   display: none;
   color: white;
   font-size: larger;
+  font-family: "Righteous", cursive;
+}
+#input {
+  margin-bottom: 5vh;
 }
 #cuadro-jugadores {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
+  width: 100vw;
 }
 .player1 {
-  width: 600px;
-  border: 1px solid red;
+  width: 50vw;
+  height: auto;
   display: none;
   color: white;
 }
 .player2 {
-  width: 600px;
-  border: 1px solid black;
+  width: 50vw;
+  height: auto;
+
   display: none;
+  color: white;
 }
 
 .opciones {
-  width: 580px;
+  width: 50vw;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-bottom: 60px;
 }
 .op {
   border: 2px solid black;
-  width: 140px;
-  height: 50px;
+  width: 20vw;
+  height: auto;
   text-align: center;
+  font-family: "Righteous", cursive;
+  font-size: 1em;
+  word-wrap: break-word;
+  box-sizing: content-box;
 }
 .player-score {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  border: 1px solid red;
+  font-family: "Righteous", cursive;
 }
 .splash {
   text-align: center;
   font-size: larger;
   color: white;
+  font-family: "Righteous", cursive;
 }
 #inicio {
   margin: 30px;
+  display: block;
+  margin: auto;
 }
 #coverImg {
-  width: 500px;
+  width: auto;
+  height: 70vh;
+  margin-bottom: 5vh;
 }
 #gameOver {
   height: 600 px;
   width: max-content;
   display: none;
   color: white;
-  font-size: 20px;
+  font-size: 2em;
   text-align: center;
+  font-family: "Righteous", cursive;
 }
 #coverImgOver {
-  height: 600px;
+  height: 40vw;
   width: auto;
   display: block;
   margin: auto;
+}
+
+#siguiente {
+  display: none;
+  margin-bottom: 3vh;
+  margin-left: 25vw;
+  font-family: "Righteous", cursive;
+}
+
+#pregunta {
+  margin-bottom: 2vh;
 }

@@ -127,10 +127,10 @@ function shuffle(arr) {
 let preguntasMezcladas = shuffle(preguntas);
 
 //Constructor Player
+let nombre = document.getElementById("nombreUsuario").name
 class Player {
   constructor(nombre) {
     this.nombre = nombre;
-
   }
 }
 
@@ -155,7 +155,7 @@ class Partida {
       score = score + 5;
     }
   }
-  //Comprobar si ha acabado la partida
+  //Comprobar si ha acabado la partida al llegar a 10 rondas
   gameOver() {
     if (this.indice >= 10) {
       //mostrar splash game over
@@ -221,7 +221,7 @@ class Board {
   }
 }
 let board = new Board();
-let player1 = new Player("alberto");
+let player1 = new Player("");
 let partida = new Partida()
 
 //Cambio Splash
@@ -232,7 +232,8 @@ document.getElementById("inicio").onclick = (evento) => {
   document.getElementById("preguntas").style.display = "inline";
   //Mostrar player 1
   document.getElementById("player1").style.display = "inline";
-  // document.getElementById("player").innerHTML =
+  //Mostrar boton siguiente pregunta
+  document.getElementById("siguiente").style.display = "inline"
   // boton siguiente pregunta
   document.getElementById("siguiente").onclick = (evento) => {
     partida.siguientePregunta()
@@ -241,18 +242,30 @@ document.getElementById("inicio").onclick = (evento) => {
   //inicio partida
   partida.siguientePregunta()
 };
-// Colorear respuestas
+// Colorear respuestas/Sonidos respuesta
 const respuestaValida = document.getElementById("correcta")
 const respuestaInvalida = document.querySelectorAll("#a,#b,#c")
-
+let aplauso = document.getElementById("aplauso")
+let fail = document.getElementById("fail")
 
 respuestaValida.addEventListener("click", event => {
+  //color respuesta correcta
   respuestaValida.style.backgroundColor = "green"
-
+  //sonido respuesta correcta
+  function playAplauso() {
+    aplauso.play()
+  }
+  playAplauso()
 })
 
 Array.from(respuestaInvalida).forEach(function (elemento) {
+  //color respuesta incorrecta
   elemento.addEventListener("click", event => {
     event.target.style.backgroundColor = "red"
+    //sonido respuesta incorrecta
+    function playFail() {
+      fail.play()
+    }
+    playFail()
   })
 })
