@@ -22,12 +22,14 @@
   </head>
   <body>
     <h1 id="titulo">Cocktail Trivia</h1>
+    <!----------------------Splash screen-------------------->
     <div class="splash" id="splash">
       <div><img src="./imgs/tomcruise.jpg" alt="" id="coverImg" /> <br /></div>
       <p> ¿Preparado para demostrar cuanto sabes de cocktails? <br /></p>
       <div id="input"> Como te llamas??: <input id="nombreUsuario" type="text" name="fname"><input type="submit" value="Enviar"><br></div>
       <button id="inicio">iniciar juego!!</button>
     </div>
+    <!----------------------Pantalla principal-------------------->
     <div class="hero" id="hero">
       <img id="imagen" src="" alt="" />
     </div>
@@ -44,12 +46,12 @@
           <button class="op" id="a">Opcion A</button>
           <button class="op" id="b">Opcion B</button>
           <button class="op" id="c">Opcion C</button>
-          <button class="op" id="correcta">Opcion D    </button>
+          <button class="op" id="d">Opcion D</button>
           <audio id="aplauso" src="./Sounds/aplauso.wav" onclick="playAplauso()"></audio>
           <audio id="fail" src="./Sounds/fail.mp3"></audio>
         </div>
         <div class="player-score">
-          <div class="player">Player 1</div>
+          <div id="player1">Player 1</div>
           <div class="score1">Score =</div>
         </div>
       </div>
@@ -58,7 +60,7 @@
           <button class="op" id="a">Opcion A</button>
           <button class="op" id="b">Opcion B</button>
           <button class="op" id="c">Opcion C</button>
-          <button class="op" id="correcta">Opcion D</button>
+          <button class="op" id="d">Opcion D</button>
         </div>
         <div class="player-score">
           <div class="player">Player 2</div>
@@ -66,11 +68,11 @@
         </div>
       </div>
     </div>
-   
+   <!----------------------GameOver screen-------------------->
     
     <div class="gameOver" id="gameOver">
     <img id="coverImgOver" src="./imgs/gameOver.jpg" alt=""  /> 
-    <p>Tu puntuacion final es de :</p>
+    <p id="puntuacionFinal">Tu puntuacion final es de :</p>
     <audio id="song" src="./Sounds/recortepiñacolada.mp3"></audio>
       </div>
     

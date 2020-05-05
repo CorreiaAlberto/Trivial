@@ -1,117 +1,151 @@
 //Preguntas
-const preguntas = [{
+const preguntas = [
+  {
     pregunta: "¿Que cocktail popularizó la pelicula El gran Lebowsky?",
-    a: "Cosmopolitan",
-    b: "Old fashioned",
-    c: "Mojito",
-    correcta: "White russian",
+    respuestas: [
+      { resp: "Cosmopolitan", correcta: false },
+      { resp: "Old fashioned", correcta: false },
+      { resp: "Mojito", correcta: false },
+      { resp: "White russian", correcta: true },
+    ],
     img: "./imgs/Ruso-blanco.jpg.",
   },
   {
     pregunta: "¿Cual de los siguientes ingredientes NO lleva un bloody mary?",
-    a: "Salsa Worcester",
-    b: "Zumo de tomate",
-    c: "Tabasco",
-    correcta: "Ginebra",
+    respuestas: [
+      { resp: "Salsa Worcester", correcta: false },
+      { resp: "Zumo de tomate", correcta: false },
+      { resp: "Tabasco", correcta: false },
+      { resp: "Ginebra", correcta: true },
+    ],
     img: "./imgs/bloody mary.jpg",
   },
   {
-    pregunta: "¿Que cocktail hizo aparición durante la segunda parte de El padrino?",
-    a: "Dry martini",
-    b: "Tom Collins",
-    c: "Negroni",
-    correcta: "Banana daiquiri",
+    pregunta:
+      "¿Que cocktail hizo aparición durante la segunda parte de El padrino?",
+    respuestas: [
+      { resp: "Dry martini", correcta: false },
+      { resp: "Tom Collins", correcta: false },
+      { resp: "Negroni", correcta: false },
+      { resp: "Banana daiquiri", correcta: true },
+    ],
     img: "./imgs/el padrino.jpg",
   },
   {
     pregunta: "¿Cual es el nombre del cocktail favorito de James Bond?",
-    a: "Vodka Martini",
-    b: "Coco loco",
-    c: "Bondtini",
-    correcta: "Vesper Martini",
-    img: "./imgs/james bond.jpg"
+    respuestas: [
+      { resp: "Vodka Martini", correcta: false },
+      { resp: "Coco loco", correcta: false },
+      { resp: "Bondtini", correcta: false },
+      { resp: "Vesper Martini", correcta: true },
+    ],
+    img: "./imgs/james bond.jpg",
   },
   {
-    pregunta: "¿Cual es el nombre del cocktail que vemos preparar en la imagen a Jerry Thomas? ",
-    a: "Blue lagoon",
-    b: "Manhattan",
-    c: "Mint julep",
-    correcta: "Blue blazer",
-    img: "./imgs/Jerry-Thomas.jpg"
+    pregunta:
+      "¿Cual es el nombre del cocktail que vemos preparar en la imagen a Jerry Thomas? ",
+    respuestas: [
+      { resp: "Blue lagoon", correcta: false },
+      { resp: "Manhattan", correcta: false },
+      { resp: "Mint julep", correcta: false },
+      { resp: "Blue blazer", correcta: true },
+    ],
+    img: "./imgs/Jerry-Thomas.jpg",
   },
   {
-    pregunta: "¿Que establecimiento cubano comercilizó por primerar vez el popular mojito?",
-    a: "La floridita",
-    b: "El bribón de la havana",
-    c: "La cantina del Malecón",
-    correcta: "La bodedguita de en medio",
-    img: "./imgs/mojito.jpg"
-
+    pregunta:
+      "¿Que establecimiento cubano comercializó por primerar vez el popular mojito?",
+    respuestas: [
+      { resp: "La floridita", correcta: false },
+      { resp: "El bribón de la havana", correcta: false },
+      { resp: "La cantina del Malecón", correcta: false },
+      { resp: "La bodedguita de en medio", correcta: true },
+    ],
+    img: "./imgs/mojito.jpg",
   },
   {
-    pregunta: "¿Cual es la bebida favorita de Don Draper, protagonista de Mad men?",
-    a: "Negroni",
-    b: "Long island ice tea",
-    c: "Agua con gas",
-    correcta: "Old fashioned",
-    img: "./imgs/madmen.jpg"
+    pregunta:
+      "¿Cual es la bebida favorita de Don Draper, protagonista de Mad men?",
+    respuestas: [
+      { resp: "Negroni", correcta: false },
+      { resp: "Long island ice tea", correcta: false },
+      { resp: "Agua con gas", correcta: false },
+      { resp: "Old fashioned", correcta: true },
+    ],
+    img: "./imgs/madmen.jpg",
   },
   {
     pregunta: "¿Cual es la base alcoholica predominante en la coctelería Tiki?",
-    a: "Vodka",
-    b: "Whisky",
-    c: "Ginebra",
-    correcta: "Ron",
-    img: "./imgs/tiki.jpg"
+    respuestas: [
+      { resp: "Vodka", correcta: false },
+      { resp: "Whisky", correcta: false },
+      { resp: "Ginebra", correcta: false },
+      { resp: "Ron", correcta: true },
+    ],
+    img: "./imgs/tiki.jpg",
   },
   {
     pregunta: "¿Cual de estos ingredientes lleva el Long Island ice tea?",
-    a: "Ginebra",
-    b: "Vodka",
-    c: "Tequila",
-    correcta: "Todas las opciones son correctas",
-    img: "./imgs/long-island.jpg"
+    respuestas: [
+      { resp: "Ginebra", correcta: false },
+      { resp: "Vodka", correcta: false },
+      { resp: "Tequila", correcta: false },
+      { resp: "Todas las opciones son correctas", correcta: true },
+    ],
+    img: "./imgs/long-island.jpg",
   },
   {
-    pregunta: "¿Cual era la bebida favorita de las  chicas de Sexo en Nueva York?",
-    a: "Bramble",
-    b: "Gin-tonic",
-    c: "Margarita",
-    correcta: "Cosmopolitan",
-    img: "./imgs/sexoNY.jpg"
+    pregunta:
+      "¿Cual era la bebida favorita de las  chicas de Sexo en Nueva York?",
+    respuestas: [
+      { resp: "Bramble", correcta: false },
+      { resp: "Gin-tonic", correcta: false },
+      { resp: "Margarita", correcta: false },
+      { resp: "Cosmopolitan", correcta: true },
+    ],
+    img: "./imgs/sexoNY.jpg",
   },
   {
-    pregunta: "¿Que coctelería inglesa se mantuvo durante 3 años consecutivos en el numero 1 de 50 world best bars?",
-    a: "Nigthjar",
-    b: "Happines Forgets",
-    c: "Dandelyan",
-    correcta: "The Artesian",
-    img: "./imgs/Artesian1.jpg"
+    pregunta:
+      "¿Que coctelería inglesa se mantuvo durante 3 años consecutivos en el numero 1 de 50 world best bars?",
+    respuestas: [
+      { resp: "Nigthjar", correcta: false },
+      { resp: "Happines Forgets", correcta: false },
+      { resp: "Dandelyan", correcta: false },
+      { resp: "The Artesian", correcta: true },
+    ],
+    img: "./imgs/Artesian1.jpg",
   },
   {
     pregunta: "¿Que tres ingredientes lleva un Margarita?",
-    a: "Pisco, triple seco y zumo de lima",
-    b: "Tequila, ázucar y zumo de lima",
-    c: "Tequila, triple seco y ázucar",
-    correcta: "Tequila, triple seco y zumo de lima",
-    img: "./imgs/margarita.jpg"
+    respuestas: [
+      { resp: "Pisco, triple seco y zumo de lima", correcta: false },
+      { resp: "Tequila, ázucar y zumo de lima", correcta: false },
+      { resp: "Tequila, triple seco y ázucar", correcta: false },
+      { resp: "Tequila, triple seco y zumo de lima", correcta: true },
+    ],
+    img: "./imgs/margarita.jpg",
   },
   {
     pregunta: "¿Que se conoce como Speakeasy?",
-    a: "Un licor",
-    b: "Un tipo de cerveza",
-    c: "Una bebida tradicional checa",
-    correcta: "Un bar oculto",
-    img: "./imgs/speak.jpg"
+    respuestas: [
+      { resp: "Un licor", correcta: false },
+      { resp: "Un tipo de cerveza", correcta: false },
+      { resp: "Una bebida tradicional checa", correcta: false },
+      { resp: "Un bar oculto", correcta: true },
+    ],
+    img: "./imgs/speak.jpg",
   },
   {
     pregunta: "¿Que día acabó la ley seca en EEUU?",
-    a: "4 de Junio 1935",
-    b: "22 de Enero 1928",
-    c: "7 de Noviembre 1932",
-    correcta: "5 de Diciembre de 1933",
-    img: "./imgs/leyseca.jpg"
-  }
+    respuestas: [
+      { resp: "4 de Junio 1935", correcta: false },
+      { resp: "22 de Enero 1928", correcta: false },
+      { resp: "7 de Noviembre 1932", correcta: false },
+      { resp: "5 de Diciembre de 1933", correcta: true },
+    ],
+    img: "./imgs/leyseca.jpg",
+  },
 ];
 // Aplico un shuffle para poder pasar orden de preguntas distinto cada vez
 function shuffle(arr) {
@@ -127,85 +161,107 @@ function shuffle(arr) {
 let preguntasMezcladas = shuffle(preguntas);
 
 //Constructor Player
-let nombre = document.getElementById("nombreUsuario").name
+
 class Player {
   constructor(nombre) {
     this.nombre = nombre;
   }
+  getName () {
+    let nombre = document.getElementById("nombreUsuario").value
+  }
 }
-
 //Constructor de partida
 class Partida {
   constructor() {
     this.preguntas = preguntasMezcladas;
     this.indice = 0;
     this.preguntaActual = this.preguntas[this.indice];
-    this.preguntasRealizadas = [];
     this.score = 0;
   }
   //Comprobar respuesta ganadora
+
   respuestaCorrecta(respuestaUsuario) {
-    if (respuestaUsuario == preguntas[this.indice].correcta) {
+    let respuestaCorrecta = null;
+    for (let i = 0; i < preguntas[this.indice].respuestas.length; i++) {
+      if (preguntas[this.indice].respuestas[i].correcta) {
+        respuestaCorrecta = preguntas[this.indice].respuestas[i].resp;
+      }
+    }
+    if (respuestaUsuario == respuestaCorrecta) {
       return true;
     }
+    return false;
   }
   //Actualizar Score
-  actualizarScore() {
-    if (this.respuestaCorrecta) {
+  actualizarScore(acierto) {
+    if (acierto) {
       score = score + 5;
     }
+   
   }
   //Comprobar si ha acabado la partida al llegar a 10 rondas
   gameOver() {
     if (this.indice >= 10) {
       //mostrar splash game over
-      document.getElementById("titulo").style.display = "none"
-      document.getElementById("hero").style.display = "none"
-      document.getElementById("cuadro-jugadores").style.display = "none"
-      document.getElementById("preguntas").style.display = "none"
-      document.getElementById("siguiente").style.display = "none"
-      document.getElementById("gameOver").style.display = "inline"
+      document.getElementById("titulo").style.display = "none";
+      document.getElementById("hero").style.display = "none";
+      document.getElementById("cuadro-jugadores").style.display = "none";
+      document.getElementById("preguntas").style.display = "none";
+      document.getElementById("siguiente").style.display = "none";
+      document.getElementById("gameOver").style.display = "inline";
+
+      //score final
+      document.getElementById("puntuacionFinal").innerHTML =
+        "Tu puntuacion final es de " + this.score;
 
       //Poner cancion game over
-      let song = document.getElementById("song")
+      let song = document.getElementById("song");
 
       function playSong() {
-        song.play()
+        song.play();
       }
-      playSong()
+      playSong();
     }
   }
 
   //Metodo para siguiente pregunta
   siguientePregunta() {
-
     //Mostrar 1 pregunta
-    document.getElementById("pregunta").innerHTML = this.preguntas[this.indice].pregunta;
+    document.getElementById("pregunta").innerHTML = this.preguntas[
+      this.indice
+    ].pregunta;
+
     //Mostrar 1 imagen
     document.getElementById("imagen").src = this.preguntas[this.indice].img;
+
     //shuffle respuestas
-    //let opciones = ["a", "b", "c", "correcta"]
-    //opciones = shuffle(opciones)
+    let opRespuestas = shuffle(this.preguntas[this.indice].respuestas);
 
     //Mostrar opciones respuesta
 
-    document.getElementById("a").innerHTML = this.preguntas[this.indice].a
-    document.getElementById("b").innerHTML = this.preguntas[this.indice].b
-    document.getElementById("c").innerHTML = this.preguntas[this.indice].c
-    document.getElementById("correcta").innerHTML = this.preguntas[this.indice].correcta
+    document.getElementById("a").innerHTML = opRespuestas[0].resp;
+    document.getElementById("b").innerHTML = opRespuestas[1].resp;
+    document.getElementById("c").innerHTML = opRespuestas[2].resp;
+    document.getElementById("d").innerHTML = opRespuestas[3].resp;
+
+    //Mostrar score
+    document.getElementsByClassName("score1").innerHTML = "Score = " + this.score;
+
+
     //Reseteo color opciones respuesta
-    const botones = document.getElementsByClassName("op")
+    const botones = document.getElementsByClassName("op");
     Array.from(botones).forEach(function (boton) {
-      boton.style.backgroundColor = "#DDD"
-    })
+      boton.style.backgroundColor = "#DDD";
+    });
+
     //Icremento indice
     this.indice++;
     //Actualizar score
-    //this.actualizarScore()
-    // Check game over
-    this.gameOver()
-  }
 
+    this.actualizarScore();
+    // Check game over
+    this.gameOver();
+  }
 }
 class Board {
   constructor() {
@@ -220,9 +276,9 @@ class Board {
     this.opcionD = document.getElementById("d");
   }
 }
+let player1 = new Player(document.getElementById("nombreUsuario").value);
 let board = new Board();
-let player1 = new Player("");
-let partida = new Partida()
+let partida = new Partida();
 
 //Cambio Splash
 document.getElementById("inicio").onclick = (evento) => {
@@ -233,39 +289,29 @@ document.getElementById("inicio").onclick = (evento) => {
   //Mostrar player 1
   document.getElementById("player1").style.display = "inline";
   //Mostrar boton siguiente pregunta
-  document.getElementById("siguiente").style.display = "inline"
+  document.getElementById("siguiente").style.display = "inline";
   // boton siguiente pregunta
   document.getElementById("siguiente").onclick = (evento) => {
-    partida.siguientePregunta()
-  }
+    partida.siguientePregunta();
+  };
 
   //inicio partida
-  partida.siguientePregunta()
+  partida.siguientePregunta();
 };
 // Colorear respuestas/Sonidos respuesta
-const respuestaValida = document.getElementById("correcta")
-const respuestaInvalida = document.querySelectorAll("#a,#b,#c")
-let aplauso = document.getElementById("aplauso")
-let fail = document.getElementById("fail")
 
-respuestaValida.addEventListener("click", event => {
-  //color respuesta correcta
-  respuestaValida.style.backgroundColor = "green"
-  //sonido respuesta correcta
-  function playAplauso() {
-    aplauso.play()
-  }
-  playAplauso()
-})
+const respuestasClick = document.querySelectorAll("#a,#b,#c,#d");
+let aplauso = document.getElementById("aplauso");
+let fail = document.getElementById("fail");
 
-Array.from(respuestaInvalida).forEach(function (elemento) {
-  //color respuesta incorrecta
-  elemento.addEventListener("click", event => {
-    event.target.style.backgroundColor = "red"
-    //sonido respuesta incorrecta
-    function playFail() {
-      fail.play()
+Array.from(respuestasClick).forEach(function (elemento) {
+  elemento.addEventListener("click", (event) => {
+    if (partida.respuestaCorrecta(event.target.innerHTML)) {
+      event.style.backgroundColor = "green";
+      aplauso.play();
+    } else {
+      event.target.style.backgroundColor = "red";
+      fail.play();
     }
-    playFail()
-  })
-})
+  });
+});
