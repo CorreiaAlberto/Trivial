@@ -20,7 +20,6 @@ su puntuacion con otros usuarios para saber quien es el que mas sabe de cocktail
 ## Back-log:
 
 - El usuario podrá introducir su nombre
-- El usuario tendrá un tiempo limitado para responder a las preguntas
 - Display de imagenes ilustrativas, que refuercen el concepto y sean memorables para el usuario
 - El juego tendra sonidos
 

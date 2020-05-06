@@ -337,34 +337,18 @@ class Partida {
       }
     }
     if (respuestaUsuario == respuestaCorrecta) {
+      this.actualizarScore()
       return true;
     }
     return false;
-
   }
   //Actualizar Score
-  actualizarScore(acierto) {
-    if (acierto) {
-      this.score = this.score + 5;
-      document.getElementsByClassName("score1").innerHTML = this.score
-    }
+  actualizarScore() {
+    this.score = this.score + 5;
+    const scoreCounter = document.querySelector(".score1")
+    scoreCounter.innerText = `Score = ${this.score}`
+  }
 
-  }
-  //Timer
-  mostrarTimer() {
-    const tiempoPregunta = 10
-    const anchoBarra = 150
-    let contador = 0
-    const anchoColoreado = anchoBarra / tiempoPregunta
-    if (contador <= tiempoPregunta) {
-      cuenta.innerHTML = contador
-      timer.style.width = anchoColoreado * contador + "px"
-      contador++
-    } else {
-      // contador = 0!respuestaCorrecta()
-      siguientePregunta()
-    }
-  }
   //Comprobar si ha acabado la partida al llegar a 10 rondas
   gameOver() {
     if (this.indice >= 10) {
@@ -378,7 +362,7 @@ class Partida {
 
       //score final
       document.getElementById("puntuacionFinal").innerHTML =
-        "Tu puntuacion final es de " + this.score;
+        player.nombre + "tu puntuacion final es de " + this.score;
 
       //Poner cancion game over
       let song = document.getElementById("song");
@@ -413,11 +397,7 @@ class Partida {
     document.getElementById("d").innerHTML = opRespuestas[3].resp;
 
     //Mostrar score
-    //document.getElementsByClassName("score1").innerHTML = "Score = " + this.score;
-
-    //Timer
-    setInterval(this.mostrarTimer, 1000)
-
+    document.getElementsByClassName("score1").innerHTML = "Score = " + this.score;
 
     //Reseteo color opciones respuesta
     const botones = document.getElementsByClassName("op");
@@ -431,10 +411,6 @@ class Partida {
     this.mostrarPregunta()
     //Icremento indice
     this.indice = 0
-
-    //Actualizar score
-    console.log(this.score)
-    this.actualizarScore();
     // Check game over
     this.gameOver();
   }
@@ -442,10 +418,6 @@ class Partida {
     //Icremento indice
     this.indice += 1
     this.mostrarPregunta()
-
-    //Actualizar score
-
-    this.actualizarScore();
     // Check game over
     this.gameOver();
   }
@@ -485,6 +457,8 @@ document.getElementById("inicio").onclick = (evento) => {
 
   };
   player.getName()
+
+
   //inicio partida
   partida.iniciarJuego();
 };
