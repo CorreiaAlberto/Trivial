@@ -331,7 +331,6 @@ class Partida {
 
   respuestaCorrecta(respuestaUsuario) {
     let respuestaCorrecta = null;
-    console.log(this.indice)
     for (let i = 0; i < this.preguntas[this.indice].respuestas.length; i++) {
       if (this.preguntas[this.indice].respuestas[i].correcta) {
         respuestaCorrecta = this.preguntas[this.indice].respuestas[i].resp;
@@ -414,7 +413,7 @@ class Partida {
     document.getElementById("d").innerHTML = opRespuestas[3].resp;
 
     //Mostrar score
-    document.getElementsByClassName("score1").innerHTML = "Score = " + this.score;
+    //document.getElementsByClassName("score1").innerHTML = "Score = " + this.score;
 
     //Timer
     setInterval(this.mostrarTimer, 1000)
@@ -431,14 +430,17 @@ class Partida {
   iniciarJuego() {
     this.mostrarPregunta()
     //Icremento indice
-    this.indice += 1
-    //Actualizar score
+    this.indice = 0
 
+    //Actualizar score
+    console.log(this.score)
     this.actualizarScore();
     // Check game over
     this.gameOver();
   }
   siguiente() {
+    //Icremento indice
+    this.indice += 1
     this.mostrarPregunta()
 
     //Actualizar score
