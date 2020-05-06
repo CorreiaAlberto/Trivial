@@ -21,12 +21,12 @@
     />
   </head>
   <body>
-    <h1 id="titulo">Cocktail Trivia</h1>
+    <h1 id="titulo">Cocktail Trivia </h1>
     <!----------------------Splash screen-------------------->
     <div class="splash" id="splash">
       <div><img src="./imgs/tomcruise.jpg" alt="" id="coverImg" /> <br /></div>
       <p> ¿Preparado para demostrar cuanto sabes de cocktails? <br /></p>
-      <div id="input"> Como te llamas??: <input id="nombreUsuario" type="text" name="fname"><input type="submit" value="Enviar"><br></div>
+      <div id="input"> Como te llamas??: <input id="nombreUsuario" type="text" ><br></div>
       <button id="inicio">iniciar juego!!</button>
     </div>
     <!----------------------Pantalla principal-------------------->
@@ -50,8 +50,10 @@
           <audio id="aplauso" src="./Sounds/aplauso.wav" onclick="playAplauso()"></audio>
           <audio id="fail" src="./Sounds/fail.mp3"></audio>
         </div>
+        <div id="cuenta"></div>
+        <div id="timer"></div>
         <div class="player-score">
-          <div id="player1">Player 1</div>
+          <p id="playerName">Player 1</p>
           <div class="score1">Score =</div>
         </div>
       </div>
