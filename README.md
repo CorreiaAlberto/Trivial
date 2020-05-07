@@ -43,6 +43,8 @@ Estructura de datos:
 
 ## Slides
 
+https://docs.google.com/presentation/d/1Q1Plz4cgqPj16BMRT6n3JN9ZuCjA1e5YZMJV1GChHhU/edit?usp=sharing
+
 ## Kanban
 
 https://trello.com/b/4cBRj5X8/proyecto-cocktail-trivia
