@@ -11,7 +11,7 @@ body {
   color: white;
   font-family: "Righteous", cursive;
   font-size: 3em;
-  margin-bottom: 5vh;
+  margin-bottom: 3vh;
 }
 .hero {
   height: auto;
@@ -24,7 +24,7 @@ body {
   align-self: center;
   width: 60vw;
   height: auto;
-  margin-bottom: 5vh;
+  margin-bottom: 4vh;
 }
 #preguntas {
   text-align: center;
@@ -35,7 +35,7 @@ body {
   font-family: "Righteous", cursive;
 }
 #input {
-  margin-bottom: 5vh;
+  margin-bottom: 4vh;
 }
 #cuadro-jugadores {
   display: flex;
@@ -93,7 +93,7 @@ body {
 }
 #coverImg {
   width: auto;
-  height: 70vh;
+  height: 65vh;
   margin-bottom: 5vh;
 }
 #gameOver {
