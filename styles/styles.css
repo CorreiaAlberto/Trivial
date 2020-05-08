@@ -22,13 +22,13 @@ body {
   display: block;
   margin: auto;
   align-self: center;
-  width: 60vw;
-  height: auto;
-  margin-bottom: 4vh;
+  height: 45vh;
+  width: auto;
+  margin-bottom: 3vh;
 }
 #preguntas {
   text-align: center;
-  margin-bottom: 10vh;
+  margin-bottom: 5vh;
   display: none;
   color: white;
   font-size: larger;
